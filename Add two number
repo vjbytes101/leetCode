@@ -1,0 +1,25 @@
+class Solution(object):
+    
+    def addTwoNumbers(self, l1, l2):
+        arr1 =[]
+        arr2 = []
+        while l1:
+            v1 = 0
+            if l1:
+                v1 = l1.val
+                l1 = l1.next
+                arr1.append(v1)
+        while l2:   
+            v2 = 0
+            if l2:
+                v2 = l2.val
+                l2 = l2.next
+                arr2.append(v2)
+        arr1.reverse()
+        arr2.reverse()
+        aa1 = ''.join(map(str, arr1))
+        aa2 = ''.join(map(str, arr2))
+        aa3 = int(aa1)+int(aa2)
+        aa5 = [int(i) for i in str(aa3)]
+        aa5.reverse()
+        return aa5
