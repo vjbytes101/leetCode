@@ -1,0 +1,16 @@
+class Solution(object):
+    def median1(self,lst):
+        n = len(lst)
+        if n < 1:
+            return None
+        if n % 2 == 1:
+            return lst[n//2]
+        else:
+            return sum(lst[n//2-1:n//2+1])/2.0
+        
+    def findMedianSortedArrays(self, nums1, nums2):        
+        nums3 = nums1 + nums2
+        nums3.sort()
+        
+        turn = self.median1(nums3)
+        return turn
