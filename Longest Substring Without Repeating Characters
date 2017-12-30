@@ -1,0 +1,14 @@
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        unique = []
+        mapval = {}
+        pos = 0
+        i = 0
+        length = 0
+        for char in s[::]:
+            if char in mapval:
+                pos = max(pos,mapval.get(char) + 1)
+            mapval[char] = i
+            length = max(length,i-pos+1)
+            i = i+1
+        return length
